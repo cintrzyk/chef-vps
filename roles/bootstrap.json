@@ -1,0 +1,14 @@
+{
+  "json_class": "Chef::Role",
+  "run_list": [
+    "recipe[locale]",
+    "recipe[nodejs]",
+    "recipe[__rbenv]"
+  ],
+  "override_attributes": {
+    "locale": {
+      "lang": "en_US.utf8",
+      "lc_all": "en_US.utf8"
+    }
+  }
+}

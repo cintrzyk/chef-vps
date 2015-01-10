@@ -1,0 +1,12 @@
+{
+  "json_class": "Chef::Role",
+  "run_list": [
+    "role[bootstrap]",
+    "role[web]",
+    "role[database]",
+    "recipe[rails_app]"
+  ],
+  "override_attributes": {
+    "app_name": "vagrant"
+  }
+}
