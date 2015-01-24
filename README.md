@@ -73,7 +73,11 @@ Create a `role` for app (name can be the same as application name) which runs "r
     "recipe[rails_app]"
   ],
   "override_attributes": {
-    "app_name": "example_app"
+    "app_name": "example_app",
+    "authorized_keys": [
+      "ssh-rsa AsadsadsecretZZZ deployer@example.com",
+      "ssh-rsa AsadsadsecretZZZ me@example.com",
+      "ssh-rsa BsadsadsecretZZZ contributor@example.com"
   }
 }
 
@@ -99,12 +103,13 @@ Host example_app.vps
   HostName vps
   User example_app
   ForwardAgent yes
+  IdentityFile ~/.ssh/me_rsa
 ```
 
-***Unfortunately ssh key for each application user is not supported yet and you need to cook as root.***
+***Cook application node as a root user***
 
 ```sh
-knife solo cook root@example.vps
+knife solo cook root@example_app.vps
 ```
 
 ### Installation on localhost using Vagrant with VirtualBox
