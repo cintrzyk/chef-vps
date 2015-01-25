@@ -249,3 +249,7 @@ Check this out :)
 ```sh
 $ vagrant ssh
 ```
+
+###Copyright and license
+
+Code released under the [MIT license](http://opensource.org/licenses/MIT). 
