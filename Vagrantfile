@@ -11,7 +11,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.omnibus.chef_version = '11.16.4'
   config.vm.provision :chef_solo do |chef|
     chef.cookbooks_path = %w( cookbooks site-cookbooks )
-    chef.roles_path = 'roles'
     chef.provisioning_path = '/tmp/vagrant-chef'
     chef.add_role 'vagrant'
   end
